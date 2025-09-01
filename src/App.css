@@ -1,4 +1,4 @@
-/* App.css */
+
 
 * {
   box-sizing: border-box;
@@ -30,9 +30,6 @@ body {
   width: 100%;
   max-height: 250px;
   object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .buttons {
@@ -54,7 +51,7 @@ body {
 }
 
 .buttons button.yes {
-  background-color: #ef5e8f;
+  background-color:  #ea4629;
 }
 
 .buttons button.no {
@@ -67,7 +64,7 @@ body {
 }
 
 .back { 
-  background-color: #ef5e8f;
+  background-color: #ea4629;
   flex: 1 1 45%;
   padding: 12px 0;
   border: none;
@@ -76,8 +73,6 @@ body {
   font-weight: bold;
   color: #fff;
   transition: all 0.3s;
-  padding-left: 10%;
-  padding-right: 10%;
 }
 
 p {
@@ -105,7 +100,65 @@ p {
   }
 
   .back {
-
     width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
+}
+
+.pin-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.pin-dots span {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #35031c;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pin-dots .filled {
+  background: #35031c;
+}
+
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 15%;
+
+}
+
+.key {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #e5a29d;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+  transform: scale(1.05);
+  background: #e17664;
+}
+
+
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+  100% { transform: translateX(0); }
 }

@@ -1,13 +1,13 @@
 
-// src/CenterBox.js
+
 import React, { useState } from "react";
 import "./App.css";
-import photo12 from "./assets/12.JPG";   // main image
-import yesImg from "./assets/yes.JPG";   // yes image
-import noImg from "./assets/no.JPG";     // no image
+import photo12 from "./assets/12.GIF";   
+import yesImg from "./assets/yes.JPG";  
+import noImg from "./assets/no.JPG";    
 
 function CenterBox() {
-  const [choice, setChoice] = useState(null); // null, "yes" or "no"
+  const [choice, setChoice] = useState(null); 
 
   const handleBack = () => setChoice(null);
   const handleYes = () => setChoice("yes");

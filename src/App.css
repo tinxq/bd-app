@@ -76,6 +76,8 @@ body {
   font-weight: bold;
   color: #fff;
   transition: all 0.3s;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 p {

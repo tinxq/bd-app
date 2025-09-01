@@ -1,10 +1,14 @@
 /* App.css */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #e6e6fa, #f5f0ff);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,16 +17,19 @@ body {
 .box {
   background-color: #f9eded;
   width: 90%;
-  max-width: 350px;
+  max-width: 400px;
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   text-align: center;
   transition: transform 0.3s;
+  margin: 20px; /* للحفاظ على مساحة عند الشاشات الصغيرة */
 }
 
 .box img {
   width: 100%;
+  max-height: 250px;
+  object-fit: cover;
   border-radius: 15px;
   margin-bottom: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -31,11 +38,12 @@ body {
 .buttons {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .buttons button {
-  flex: 1;
-  margin: 0 5px;
+  flex: 1 1 45%;
   padding: 12px 0;
   border: none;
   border-radius: 50px;
@@ -54,15 +62,14 @@ body {
 }
 
 .buttons button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   opacity: 0.9;
 }
-button {
-  flex: 1;
-  margin: 0 5px;
-  padding: 15px 0;
-  padding-left: 10%;
-  padding-right: 10%;
+
+.back { 
+  background-color: #ef5e8f;
+  flex: 1 1 45%;
+  padding: 12px 0;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -70,15 +77,33 @@ button {
   color: #fff;
   transition: all 0.3s;
 }
-.back{
 
-  background-color: #ef5e8f;
- 
-}
 p {
   color: #35031c;
   font-weight: bold;
-  letter-spacing: 2px;
-  text-align: left;
+  letter-spacing: 1px;
+  text-align: center; /* خلي النص في الوسط */
   line-height: 1.5;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .box {
+    padding: 15px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  .buttons button {
+    flex: 1 1 100%;
+  }
+
+  .back {
+
+    width: 100%;
+  }
 }

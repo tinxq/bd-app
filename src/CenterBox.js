@@ -40,7 +40,11 @@ function CenterBox() {
             Cheers to another year of fun, exciting experiences, growth, and unforgettable moments! 
             May all your dreams come true and may you always smile and be surrounded by love and positivity.
           </p>
+          <button className="back" onClick={handleBack}>
+            back
+          </button>
         </div>
+        
       )}
 
       {choice === "no" && (

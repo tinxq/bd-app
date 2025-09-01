@@ -3,7 +3,7 @@ import "./App.css";
 
 function LockScreen({ onUnlock }) {
   const [enteredPin, setEnteredPin] = useState("");
-  const correctPin = "1234";
+  const correctPin = "9292";
 
   const handleNumberClick = (num) => {
     if (enteredPin.length < 4) {

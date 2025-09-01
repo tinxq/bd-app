@@ -16,14 +16,14 @@ body {
 
 .box {
   background-color: #f9eded;
-  width: 90%;
-  max-width: 400px;
+  width: 300px;
+  max-width: 300px;
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   text-align: center;
   transition: transform 0.3s;
-  margin: 20px; /* للحفاظ على مساحة عند الشاشات الصغيرة */
+  margin: 20px; 
 }
 
 .box img {
@@ -84,13 +84,13 @@ p {
   color: #35031c;
   font-weight: bold;
   letter-spacing: 1px;
-  text-align: center; /* خلي النص في الوسط */
+  text-align: center; 
   line-height: 1.5;
   font-size: 14px;
   word-wrap: break-word;
 }
 
-/* Responsive */
+
 @media (max-width: 480px) {
   .box {
     padding: 15px;

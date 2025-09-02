@@ -5,7 +5,7 @@ function LockScreen({ onUnlock }) {
   const [enteredPin, setEnteredPin] = useState("");
   const [wrongCount, setWrongCount] = useState(0);
   const [hint, setHint] = useState("");
-  const correctPin = "92921"; // كلمة السر 5 أرقام
+  const correctPin = "93921"; // كلمة السر 5 أرقام
 
   const hints = [
     " hint 1: the first number is 9 ",

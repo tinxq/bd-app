@@ -8,9 +8,9 @@ function LockScreen({ onUnlock }) {
   const correctPin = "92921"; // كلمة السر 5 أرقام
 
   const hints = [
-    "تلميح 1: الرقم 9 موجود مرتين",
-    "تلميح 2: الرقم الأخير هو 9",
-    "تلميح 3: الرقم الثاني هو 2"
+    " hint 1: the first number is 9 ",
+   "hint 2 : Related to you",
+   "hint 3 : I’m narcissistic so it relates to me too "
   ];
 
   const handleNumberClick = (num) => {

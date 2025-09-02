@@ -3,21 +3,41 @@ import "./App.css";
 
 function LockScreen({ onUnlock }) {
   const [enteredPin, setEnteredPin] = useState("");
-  const correctPin = "9292";
+  const [wrongCount, setWrongCount] = useState(0);
+  const [hint, setHint] = useState("");
+  const correctPin = "92921"; // كلمة السر 5 أرقام
+
+  const hints = [
+    "تلميح 1: الرقم 9 موجود مرتين",
+    "تلميح 2: الرقم الأخير هو 9",
+    "تلميح 3: الرقم الثاني هو 2"
+  ];
 
   const handleNumberClick = (num) => {
-    if (enteredPin.length < 4) {
+    if (enteredPin.length < 5) {
       const newPin = enteredPin + num;
       setEnteredPin(newPin);
 
-      if (newPin.length === 4) {
+      if (newPin.length === 5) {
         if (newPin === correctPin) {
           onUnlock();
+          setHint(""); // اختفاء الهينت بعد النجاح
         } else {
           const dots = document.querySelector(".pin-dots");
           dots.classList.add("shake");
           setTimeout(() => dots.classList.remove("shake"), 500);
+
+          const newWrongCount = wrongCount + 1;
+          setWrongCount(newWrongCount);
           setEnteredPin("");
+
+          // عرض الهينت كل 4 محاولات خاطئة، وبحد أقصى 3 هينتات
+          if (newWrongCount % 4 === 0) {
+            const hintIndex = Math.floor(newWrongCount / 4) - 1;
+            if (hintIndex < hints.length) {
+              setHint(hints[hintIndex]);
+            }
+          }
         }
       }
     }
@@ -29,10 +49,10 @@ function LockScreen({ onUnlock }) {
 
   return (
     <div className="box">
-      <h2 style={{ color: "#35031c" }}> password</h2>
+      <h2 style={{ color: "#35031c" }}>password</h2>
 
       <div className="pin-dots">
-        {[0, 1, 2, 3].map((i) => (
+        {[0, 1, 2, 3, 4].map((i) => (
           <span key={i} className={enteredPin[i] ? "filled" : ""}></span>
         ))}
       </div>
@@ -50,6 +70,8 @@ function LockScreen({ onUnlock }) {
           </button>
         ))}
       </div>
+
+      {hint && <p className="hint">{hint}</p>} {/* يظهر الهينت هنا */}
     </div>
   );
 }
